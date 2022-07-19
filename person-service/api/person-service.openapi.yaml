@@ -51,6 +51,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/persons'
+  /person{username}:
+    description: Delete a Person by username
+    delete:
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successfully deleted a Person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/nullObject'
 components:
   schemas:
     person:
@@ -58,21 +74,70 @@ components:
       properties:
         PEID:
           type: integer
-        Username:
+          nullable: false
+        username:
           type: string
-          example: jonnef
-        Vorname:
+          example: mmuster
+          nullable: false
+        firstname:
           type: string
-          example: Kenny
+          example: Max
+          nullable: false
+        lastname:
+          type: string
+          example: Mustermann
+          nullable: false
+        dateOfBirth:
+          type: string
+          format: date
+          example: 19.07.2000
+          nullable: false
+        gender:
+          type: string
+          example: male (male/female/diverse)
+        weight:
+          type: number
+          format: double
+          example: 76.4
+        height:
+          type: integer
+          example: 187
     persons:
       type: array
       items:
         properties:
           PEID:
             type: integer
-          Username:
+            nullable: false
+          username:
             type: string
-            example: jonnef
-          Vorname:
+            example: mmuster
+            nullable: false
+          firstname:
             type: string
-            example: Kenny
+            example: Max
+            nullable: false
+          lastname:
+            type: string
+            example: Mustermann
+            nullable: false
+          dateOfBirth:
+            type: string
+            format: date
+            example: 19.07.2000
+            nullable: false
+          gender:
+            type: string
+            example: male (male/female/diverse)
+          weight:
+            type: number
+            format: double
+            example: 76.4
+          height:
+            type: integer
+            example: 187
+    nullObject:
+      type: integer
+      example:
+      nullable: true
+      
