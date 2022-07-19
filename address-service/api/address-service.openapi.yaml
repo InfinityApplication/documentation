@@ -7,7 +7,7 @@ servers:
   - url: http://infinityapp-api.com
   - url: http://jonnef-api.com
 paths:
-  /person:
+  /address:
     description: Person Resource
     get:
       description: Operation to Fetch Persons
@@ -24,19 +24,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/persons'
+                $ref: '#/components/schemas/addresses'
     post:
       description: Add a new Person
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/person'
+              $ref: '#/components/schemas/address'
       responses:
         201:
           description: Successfully added
-  /person{id}:
-    description: Get Person based on Path Parameter
+  /address{adid}:
+    description: Address methods with path parameter adid
     get:
       parameters:
         - in: path
@@ -50,29 +50,54 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/persons'
+                $ref: '#/components/schemas/addresses'
+    delete:
+      description: Delete Address by ID
+      parameters:
+        - in: path
+          name: ADID
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successfully deleted the Address
 components:
   schemas:
-    person:
+    address:
       type: object
       properties:
-        PEID:
+        ADID:
           type: integer
-        Username:
+          nullable: false
+        street:
           type: string
-          example: jonnef
-        Vorname:
+          example: Duisburgerstraße
+        houseNumber:
           type: string
-          example: Kenny
-    persons:
+          example: 145
+        postCode:
+          type: integer
+          example: 40477
+        city:
+          type: string
+          example: Düsseldorf
+    addresses:
       type: array
       items:
         properties:
-          PEID:
+          ADID:
             type: integer
-          Username:
+            nullable: false
+          street:
             type: string
-            example: jonnef
-          Vorname:
+            example: Duisburgerstraße
+          houseNumber:
             type: string
-            example: Kenny
+            example: 145
+          postCode:
+            type: integer
+            example: 40477
+          city:
+            type: string
+            example: Düsseldorf

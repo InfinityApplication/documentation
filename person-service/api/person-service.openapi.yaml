@@ -18,6 +18,12 @@ paths:
           schema:
             type: string
             example: jonnef
+        - in: query
+          name: PEID
+          required: true
+          schema:
+            type: integer
+            example: 0
       responses:
         200:
           description: Success!
@@ -40,7 +46,7 @@ paths:
     get:
       parameters:
         - in: path
-          name: id
+          name: PEID
           required: true
           schema:
             type: integer
@@ -51,9 +57,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/persons'
+    patch:
+      parameters:
+        - in: path
+          name: PEID
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Data for Person with {PEID} changed! 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+          
   /person{username}:
     description: Delete a Person by username
     delete:
+      description: Deleta a Person by username
       parameters:
         - in: path
           name: username
@@ -63,10 +85,6 @@ paths:
       responses:
         200:
           description: Successfully deleted a Person
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/nullObject'
 components:
   schemas:
     person:
@@ -79,11 +97,11 @@ components:
           type: string
           example: mmuster
           nullable: false
-        firstname:
+        firstName:
           type: string
           example: Max
           nullable: false
-        lastname:
+        lastName:
           type: string
           example: Mustermann
           nullable: false
@@ -113,11 +131,11 @@ components:
             type: string
             example: mmuster
             nullable: false
-          firstname:
+          firstName:
             type: string
             example: Max
             nullable: false
-          lastname:
+          lastName:
             type: string
             example: Mustermann
             nullable: false
@@ -136,8 +154,3 @@ components:
           height:
             type: integer
             example: 187
-    nullObject:
-      type: integer
-      example:
-      nullable: true
-      
