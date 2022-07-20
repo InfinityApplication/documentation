@@ -4,7 +4,7 @@
 
 ### person-service
 
-[Rendered version of API´s can be found here.](https://infinityapplication.github.io/person-service/)
+[Rendered version of person-service API can be found here.](https://infinityapplication.github.io/person-service/)
 
 [The openapi file can be found here.](https://github.com/InfinityApplication/person-service/blob/master/api/person-service.openapi.yaml)
 
@@ -12,7 +12,7 @@
 
 ### address-service
 
-[Rendered version of API´s can be found here.](https://infinityapplication.github.io/address-service/)
+[Rendered version of address-service API can be found here.](https://infinityapplication.github.io/address-service/)
 
 [The openapi file can be found here.](https://github.com/InfinityApplication/address-service/blob/master/api/address-service.openapi.yaml)
 
