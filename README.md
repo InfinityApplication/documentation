@@ -1,17 +1,19 @@
-# Services
+# Documentation
 
-## In this repository you can find the services of the InfinityApplication
-
-[Rendered version of API´s can be found here.](https://infinityapplication.github.io/services/?urls.primaryName=person-service%20API)
+## In this repository you can find the Documentation of the InfinityApplication
 
 ### person-service
 
-[The openapi file can be found here.](https://github.com/InfinityApplication/services/blob/master/person-service/api/person-service.openapi.yaml)
+[Rendered version of API´s can be found here.](https://infinityapplication.github.io/person-service/)
 
-![person entity](./images/personEntity.png)
+[The openapi file can be found here.](https://github.com/InfinityApplication/person-service/blob/master/api/person-service.openapi.yaml)
+
+![person entity](images/personEntity.png)
 
 ### address-service
 
-[The openapi file can be found here.](https://github.com/InfinityApplication/services/blob/master/address-service/api/address-service.openapi.yaml)
+[Rendered version of API´s can be found here.](https://infinityapplication.github.io/address-service/)
 
-![address entity](./images/addressEntity.png)
+[The openapi file can be found here.](https://github.com/InfinityApplication/address-service/blob/master/api/address-service.openapi.yaml)
+
+![address entity](images/addressEntity.png)
